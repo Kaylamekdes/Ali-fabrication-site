@@ -1,0 +1,4 @@
+# Client materials: kept locally, not published (the GitHub repo is public)
+docs/reference/
+# Original images; the site uses the derivatives in assets/img/
+assets/source/

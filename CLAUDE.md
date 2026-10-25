@@ -1,0 +1,16 @@
+# CLAUDE.md — Ali Fabrication landing page
+
+Read `README.md` and everything in `docs/` before writing any code. The design reference is `docs/reference/design-reference-desktop.jpg` and is the visual source of truth. The original design prompt is in `docs/01-DESIGN-SPECIFICATION.md`.
+
+## Rules
+1. Reproduce the supplied design faithfully. Do not redesign, add sections, reorder sections, change the palette, or swap typography. **Approved exceptions (2026-10-25):** rounded corners (`--radius-sm/md/lg` tokens), motion (transform/opacity only; under `prefers-reduced-motion` a gentle version with opacity fades and the count-up only), and the redesigned bento stats section, all as specified in `docs/01` ("Approved design updates") and `docs/02`. **Copy and brand cleanup (2026-10-25):** text wordmark instead of the AL logo, shorter copy, no hero contact overlay, as specified in `docs/01` ("Copy and brand cleanup") and `docs/03` ("Copy deck 2026-10-25"). Anything beyond those still needs approval.
+2. Follow `docs/10-IMPLEMENTATION-PLAN.md` one stage at a time. After each stage, render the page, screenshot it at 1795 px wide, compare with the reference, and fix differences before moving on. Never claim a match without inspecting the render.
+3. Stack: plain HTML, CSS and JavaScript. No framework, no build step, no backend (`docs/06-TECHNICAL-ARCHITECTURE.md`).
+4. Facts: page copy is the director's deck in `docs/03` ("Copy deck 2026-10-25"); use it word for word. Anything outside the deck must be marked V in `docs/03`. Never publish items marked X or C. Figures: "63 projects on record", "10 days to 24 months", "10-year guarantee on folding doors"; sliding doors "up to 6 m high".
+   Copy rules: no em dashes or en dashes in any site file (write ranges as "2011 to 2023"); headings 5 words or fewer, body lines 12 words or fewer, one sentence per card (the H1 and the Architectural Doors line are approved exceptions); alt text under 12 words; aria-labels under 6 words. Before finishing, grep the site files (not `docs/`) for `—` and `–` and report the result.
+5. Images: originals live in `assets/source/` and must never be edited or deleted. Create derivatives in `assets/img/`. Follow `docs/04-ASSET-MANIFEST.md`. Do NOT caption the generic images with real project names (Cathedral Mall, Tenwek Hospital, Highway Mall). Leave IMG-05 to IMG-08 unplaced until the director answers Q-01 and Q-04.
+6. The quotation form has no backend. It validates, then opens WhatsApp (`wa.me/254721691786`) or `mailto:info.alifab@gmail.com`. It must never say the request was received or routed.
+7. While unapproved: keep `noindex, nofollow`, `robots.txt` Disallow, and the visible notice "Design concept by TheCompany.design. Not the official website." Do not use the company's domains.
+8. Placeholders ("address to confirm" in the quotation Visit row) stay marked as placeholders and are listed in the final report. Do not invent values. The wordmark is also a placeholder until the company supplies a logo; do not draw a logo.
+9. Do not guess the director's answers. Record anything new in `docs/12-ASSUMPTIONS-AND-OPEN-QUESTIONS.md`.
+10. Accessibility and performance targets are in docs 08 and 11. Run the acceptance checklist in doc 11 at the end and report honestly what passed and what could not be tested.
